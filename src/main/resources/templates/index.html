@@ -3,11 +3,35 @@
 <head>
   <meta charset="UTF-8">
   <title>Title</title>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 </head>
 <body>
 boom
 <a class="delete" href="#" onclick="return confirm('Are you sure you want to delete this item')"
    title="delete">Delete</a>
+<script>
+  function myFunction() {
+    swal({
+      title: "Are you sure?",
+      text: "Once deleted, you will not be able to recover this imaginary file!",
+      icon: "warning",
+      buttons: true,
+      dangerMode: true,
+    })
+    .then((willDelete) => {
+      if (willDelete) {
+        swal("Poof! Your imaginary file has been deleted!", {
+          icon: "success",
+        });
+      } else {
+        swal("Your imaginary file is safe!");
+      }
+    });
+  }
+</script>
+<p>
+  <button onclick="myFunction()">Click me</button>
+</p>
 
 </body>
 </html>

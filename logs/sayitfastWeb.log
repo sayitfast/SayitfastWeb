@@ -1,273 +1,38 @@
-2020-09-15 17:50:34.868 ERROR 42285 --- [HikariPool-1 connection adder] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Error thrown while acquiring connection from data source
-
-org.h2.jdbc.JdbcSQLNonTransientConnectionException: The database is open in exclusive mode; can not open additional connections [90135-200]
-	at org.h2.message.DbException.getJdbcSQLException(DbException.java:622) ~[h2-1.4.200.jar:1.4.200]
-	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429) ~[h2-1.4.200.jar:1.4.200]
-	at org.h2.message.DbException.get(DbException.java:205) ~[h2-1.4.200.jar:1.4.200]
-	at org.h2.message.DbException.get(DbException.java:181) ~[h2-1.4.200.jar:1.4.200]
-	at org.h2.message.DbException.get(DbException.java:170) ~[h2-1.4.200.jar:1.4.200]
-	at org.h2.engine.Session.checkSuspended(Session.java:1369) ~[h2-1.4.200.jar:1.4.200]
-	at org.h2.engine.Session.isOpen(Session.java:1303) ~[h2-1.4.200.jar:1.4.200]
-	at org.h2.engine.Session.waitIfExclusiveModeEnabled(Session.java:1639) ~[h2-1.4.200.jar:1.4.200]
-	at org.h2.command.Command.executeQuery(Command.java:186) ~[h2-1.4.200.jar:1.4.200]
-	at org.h2.jdbc.JdbcConnection.isReadOnly(JdbcConnection.java:631) ~[h2-1.4.200.jar:1.4.200]
-	at com.zaxxer.hikari.pool.PoolBase.setupConnection(PoolBase.java:402) ~[HikariCP-3.4.5.jar:na]
-	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:363) ~[HikariCP-3.4.5.jar:na]
-	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:206) ~[HikariCP-3.4.5.jar:na]
-	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:477) [HikariCP-3.4.5.jar:na]
-	at com.zaxxer.hikari.pool.HikariPool.access$100(HikariPool.java:71) [HikariCP-3.4.5.jar:na]
-	at com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator.call(HikariPool.java:725) [HikariCP-3.4.5.jar:na]
-	at com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator.call(HikariPool.java:711) [HikariCP-3.4.5.jar:na]
-	at java.util.concurrent.FutureTask.run(FutureTask.java:266) [na:1.8.0_131]
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142) [na:1.8.0_131]
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617) [na:1.8.0_131]
-	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_131]
-
-2020-09-15 17:50:37.607  INFO 42308 --- [restartedMain] c.s.SaytfastWeb.SaytfastWebApplication   : Starting SaytfastWebApplication on rhetts-Mac-Pro-3.local with PID 42308 (/Users/rhettherring/IdeaProjects/SaytfastWeb /target/classes started by rhettherring in /Users/rhettherring/IdeaProjects/SaytfastWeb )
-2020-09-15 17:50:37.609  INFO 42308 --- [restartedMain] c.s.SaytfastWeb.SaytfastWebApplication   : The following profiles are active: dev
-2020-09-15 17:50:37.656  INFO 42308 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2020-09-15 17:50:37.657  INFO 42308 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2020-09-15 17:50:38.432  INFO 42308 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFERRED mode.
-2020-09-15 17:50:38.479  INFO 42308 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 41ms. Found 1 JPA repository interfaces.
-2020-09-15 17:50:38.956  INFO 42308 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2020-09-15 17:50:38.963  INFO 42308 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2020-09-15 17:50:38.963  INFO 42308 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.37]
-2020-09-15 17:50:39.030  INFO 42308 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2020-09-15 17:50:39.030  INFO 42308 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1373 ms
-2020-09-15 17:50:39.133  INFO 42308 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2020-09-15 17:50:39.214  INFO 42308 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2020-09-15 17:50:39.219  INFO 42308 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:SayitfastWeb'
-2020-09-15 17:50:39.361  INFO 42308 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2020-09-15 17:50:39.403  INFO 42308 --- [task-1] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2020-09-15 17:50:39.495  INFO 42308 --- [task-1] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.21.Final
-2020-09-15 17:50:39.495  WARN 42308 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2020-09-15 17:50:39.598  INFO 42308 --- [task-1] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
-2020-09-15 17:50:39.680  INFO 42308 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
-2020-09-15 17:50:39.684  INFO 42308 --- [task-1] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
-2020-09-15 17:50:40.151  INFO 42308 --- [task-1] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2020-09-15 17:50:40.157  INFO 42308 --- [task-1] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2020-09-15 17:50:40.173  INFO 42308 --- [task-2] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2020-09-15 17:50:40.272  INFO 42308 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@305468ea, org.springframework.security.web.context.SecurityContextPersistenceFilter@10f5c02d, org.springframework.security.web.header.HeaderWriterFilter@28fb7a42, org.springframework.security.web.authentication.logout.LogoutFilter@7e7943c7, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@1dff791b, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@76e2a9ee, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@218bdd27, org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter@38c8e90a, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@51ebb9d0, org.springframework.security.web.session.SessionManagementFilter@46b9cf4f, org.springframework.security.web.access.ExceptionTranslationFilter@24d12cbd, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@26b4007c]
-2020-09-15 17:50:40.308  INFO 42308 --- [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 15 endpoint(s) beneath base path '/actuator'
-2020-09-15 17:50:40.371  INFO 42308 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
-2020-09-15 17:50:40.372  INFO 42308 --- [restartedMain] DeferredRepositoryInitializationListener : Triggering deferred initialization of Spring Data repositories…
-2020-09-15 17:50:40.545  INFO 42308 --- [restartedMain] DeferredRepositoryInitializationListener : Spring Data repositories initialized!
-2020-09-15 17:50:40.558  INFO 42308 --- [restartedMain] c.s.SaytfastWeb.SaytfastWebApplication   : Started SaytfastWebApplication in 3.26 seconds (JVM running for 3.82)
-2020-09-15 17:50:41.003  INFO 42308 --- [RMI TCP Connection(1)-192.168.1.94] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2020-09-15 17:50:41.003  INFO 42308 --- [RMI TCP Connection(1)-192.168.1.94] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2020-09-15 17:50:41.009  INFO 42308 --- [RMI TCP Connection(1)-192.168.1.94] o.s.web.servlet.DispatcherServlet        : Completed initialization in 6 ms
-2020-09-15 17:50:50.426  INFO 42308 --- [SpringContextShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2020-09-15 17:50:50.428  INFO 42308 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
-2020-09-15 17:50:50.636  WARN 42308 --- [SpringContextShutdownHook] o.s.b.f.support.DisposableBeanAdapter    : Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-200]
-2020-09-15 17:50:50.636  INFO 42308 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2020-09-15 17:50:50.688  INFO 42308 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2020-09-15 22:08:13.450  INFO 45296 --- [restartedMain] c.s.SaytfastWeb.SaytfastWebApplication   : Starting SaytfastWebApplication on rhetts-Mac-Pro-3.local with PID 45296 (/Users/rhettherring/IdeaProjects/SaytfastWeb /target/classes started by rhettherring in /Users/rhettherring/IdeaProjects/SaytfastWeb )
-2020-09-15 22:08:13.453  INFO 45296 --- [restartedMain] c.s.SaytfastWeb.SaytfastWebApplication   : The following profiles are active: dev
-2020-09-15 22:08:13.511  INFO 45296 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2020-09-15 22:08:13.511  INFO 45296 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2020-09-15 22:08:14.386  INFO 45296 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFERRED mode.
-2020-09-15 22:08:14.437  INFO 45296 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 43ms. Found 1 JPA repository interfaces.
-2020-09-15 22:08:14.945  INFO 45296 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2020-09-15 22:08:14.951  INFO 45296 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2020-09-15 22:08:14.951  INFO 45296 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.37]
-2020-09-15 22:08:15.024  INFO 45296 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2020-09-15 22:08:15.024  INFO 45296 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1513 ms
-2020-09-15 22:08:15.127  INFO 45296 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2020-09-15 22:08:15.237  INFO 45296 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2020-09-15 22:08:15.243  INFO 45296 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:SayitfastWeb'
-2020-09-15 22:08:15.400  INFO 45296 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2020-09-15 22:08:15.468  INFO 45296 --- [task-1] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2020-09-15 22:08:15.507  INFO 45296 --- [task-1] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.21.Final
-2020-09-15 22:08:15.510  WARN 45296 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2020-09-15 22:08:15.644  INFO 45296 --- [task-1] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
-2020-09-15 22:08:15.714  INFO 45296 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
-2020-09-15 22:08:15.739  INFO 45296 --- [task-1] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
-2020-09-15 22:08:16.273  INFO 45296 --- [task-1] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2020-09-15 22:08:16.279  INFO 45296 --- [task-1] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2020-09-15 22:08:16.295  INFO 45296 --- [task-2] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2020-09-15 22:08:16.409  INFO 45296 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@36d5980f, org.springframework.security.web.context.SecurityContextPersistenceFilter@f13700f, org.springframework.security.web.header.HeaderWriterFilter@463b6865, org.springframework.security.web.authentication.logout.LogoutFilter@52d375f8, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@3223cb76, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@7b2be101, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@188671e2, org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter@4eace41a, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@47d14387, org.springframework.security.web.session.SessionManagementFilter@4b6a9fa6, org.springframework.security.web.access.ExceptionTranslationFilter@7fc8f723, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@e468bd1]
-2020-09-15 22:08:16.448  INFO 45296 --- [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 15 endpoint(s) beneath base path '/actuator'
-2020-09-15 22:08:16.514  INFO 45296 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
-2020-09-15 22:08:16.516  INFO 45296 --- [restartedMain] DeferredRepositoryInitializationListener : Triggering deferred initialization of Spring Data repositories…
-2020-09-15 22:08:16.696  INFO 45296 --- [restartedMain] DeferredRepositoryInitializationListener : Spring Data repositories initialized!
-2020-09-15 22:08:16.710  INFO 45296 --- [restartedMain] c.s.SaytfastWeb.SaytfastWebApplication   : Started SaytfastWebApplication in 3.629 seconds (JVM running for 4.388)
-2020-09-15 22:08:17.108  INFO 45296 --- [RMI TCP Connection(1)-127.0.0.1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2020-09-15 22:08:17.108  INFO 45296 --- [RMI TCP Connection(1)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2020-09-15 22:08:17.116  INFO 45296 --- [RMI TCP Connection(1)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 7 ms
-2020-09-15 22:17:42.358  INFO 45296 --- [SpringContextShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2020-09-15 22:17:42.359  INFO 45296 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
-2020-09-15 22:17:42.566  WARN 45296 --- [SpringContextShutdownHook] o.s.b.f.support.DisposableBeanAdapter    : Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-200]
-2020-09-15 22:17:42.567  INFO 45296 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2020-09-15 22:17:42.620  INFO 45296 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2020-09-15 22:17:47.224  INFO 45594 --- [restartedMain] c.s.SaytfastWeb.SaytfastWebApplication   : Starting SaytfastWebApplication on rhetts-Mac-Pro-3.local with PID 45594 (/Users/rhettherring/IdeaProjects/SaytfastWeb /target/classes started by rhettherring in /Users/rhettherring/IdeaProjects/SaytfastWeb )
-2020-09-15 22:17:47.226  INFO 45594 --- [restartedMain] c.s.SaytfastWeb.SaytfastWebApplication   : The following profiles are active: dev
-2020-09-15 22:17:47.273  INFO 45594 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2020-09-15 22:17:47.274  INFO 45594 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2020-09-15 22:17:48.076  INFO 45594 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFERRED mode.
-2020-09-15 22:17:48.124  INFO 45594 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 41ms. Found 1 JPA repository interfaces.
-2020-09-15 22:17:48.667  INFO 45594 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2020-09-15 22:17:48.685  INFO 45594 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2020-09-15 22:17:48.685  INFO 45594 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.37]
-2020-09-15 22:17:48.803  INFO 45594 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2020-09-15 22:17:48.804  INFO 45594 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1530 ms
-2020-09-15 22:17:48.922  INFO 45594 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2020-09-15 22:17:49.003  INFO 45594 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2020-09-15 22:17:49.007  INFO 45594 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:SayitfastWeb'
-2020-09-15 22:17:49.159  INFO 45594 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2020-09-15 22:17:49.225  INFO 45594 --- [task-1] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2020-09-15 22:17:49.264  INFO 45594 --- [task-1] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.21.Final
-2020-09-15 22:17:49.265  WARN 45594 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2020-09-15 22:17:49.370  INFO 45594 --- [task-1] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
-2020-09-15 22:17:49.452  INFO 45594 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
-2020-09-15 22:17:49.460  INFO 45594 --- [task-1] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
-2020-09-15 22:17:49.943  INFO 45594 --- [task-1] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2020-09-15 22:17:49.950  INFO 45594 --- [task-1] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2020-09-15 22:17:49.967  INFO 45594 --- [task-2] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2020-09-15 22:17:50.071  INFO 45594 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@4a58aa75, org.springframework.security.web.context.SecurityContextPersistenceFilter@2fde3469, org.springframework.security.web.header.HeaderWriterFilter@7d71a21d, org.springframework.security.web.authentication.logout.LogoutFilter@12303589, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@32f2ba6a, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@6c3be06a, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@63a7900f, org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter@4e2a3a84, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@1e3a6b1b, org.springframework.security.web.session.SessionManagementFilter@d4d2f29, org.springframework.security.web.access.ExceptionTranslationFilter@3b596fe7, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@6a1e6f4e]
-2020-09-15 22:17:50.109  INFO 45594 --- [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 15 endpoint(s) beneath base path '/actuator'
-2020-09-15 22:17:50.173  INFO 45594 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
-2020-09-15 22:17:50.174  INFO 45594 --- [restartedMain] DeferredRepositoryInitializationListener : Triggering deferred initialization of Spring Data repositories…
-2020-09-15 22:17:50.366  INFO 45594 --- [restartedMain] DeferredRepositoryInitializationListener : Spring Data repositories initialized!
-2020-09-15 22:17:50.409  INFO 45594 --- [restartedMain] c.s.SaytfastWeb.SaytfastWebApplication   : Started SaytfastWebApplication in 3.503 seconds (JVM running for 4.155)
-2020-09-15 22:17:50.598  INFO 45594 --- [RMI TCP Connection(5)-192.168.1.94] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2020-09-15 22:17:50.599  INFO 45594 --- [RMI TCP Connection(5)-192.168.1.94] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2020-09-15 22:17:50.610  INFO 45594 --- [RMI TCP Connection(5)-192.168.1.94] o.s.web.servlet.DispatcherServlet        : Completed initialization in 11 ms
-2020-09-15 22:21:51.220  INFO 45594 --- [SpringContextShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2020-09-15 22:21:51.222  INFO 45594 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
-2020-09-15 22:21:51.430  WARN 45594 --- [SpringContextShutdownHook] o.s.b.f.support.DisposableBeanAdapter    : Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-200]
-2020-09-15 22:21:51.431  INFO 45594 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2020-09-15 22:21:51.483  INFO 45594 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2020-09-15 22:49:59.143  INFO 46132 --- [restartedMain] c.s.SaytfastWeb.SaytfastWebApplication   : Starting SaytfastWebApplication on rhetts-Mac-Pro-3.local with PID 46132 (/Users/rhettherring/IdeaProjects/SaytfastWeb /target/classes started by rhettherring in /Users/rhettherring/IdeaProjects/SaytfastWeb )
-2020-09-15 22:49:59.146  INFO 46132 --- [restartedMain] c.s.SaytfastWeb.SaytfastWebApplication   : The following profiles are active: dev
-2020-09-15 22:49:59.194  INFO 46132 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2020-09-15 22:49:59.194  INFO 46132 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2020-09-15 22:49:59.953  INFO 46132 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFERRED mode.
-2020-09-15 22:49:59.998  INFO 46132 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 38ms. Found 1 JPA repository interfaces.
-2020-09-15 22:50:00.455  INFO 46132 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2020-09-15 22:50:00.462  INFO 46132 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2020-09-15 22:50:00.462  INFO 46132 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.37]
-2020-09-15 22:50:00.530  INFO 46132 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2020-09-15 22:50:00.531  INFO 46132 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1336 ms
-2020-09-15 22:50:00.635  INFO 46132 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2020-09-15 22:50:00.711  INFO 46132 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2020-09-15 22:50:00.715  INFO 46132 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:SayitfastWeb'
-2020-09-15 22:50:00.858  INFO 46132 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2020-09-15 22:50:00.929  INFO 46132 --- [task-1] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2020-09-15 22:50:00.969  INFO 46132 --- [task-1] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.21.Final
-2020-09-15 22:50:00.970  WARN 46132 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2020-09-15 22:50:01.074  INFO 46132 --- [task-1] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
-2020-09-15 22:50:01.151  INFO 46132 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
-2020-09-15 22:50:01.165  INFO 46132 --- [task-1] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
-2020-09-15 22:50:01.643  INFO 46132 --- [task-1] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2020-09-15 22:50:01.649  INFO 46132 --- [task-1] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2020-09-15 22:50:01.665  INFO 46132 --- [task-2] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2020-09-15 22:50:01.763  INFO 46132 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@593d3ab, org.springframework.security.web.context.SecurityContextPersistenceFilter@2296f894, org.springframework.security.web.header.HeaderWriterFilter@554aff52, org.springframework.security.web.authentication.logout.LogoutFilter@31d8ab85, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@5be891a1, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@61e5098b, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@1d37b5c8, org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter@3869f58b, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@281cb56e, org.springframework.security.web.session.SessionManagementFilter@349dfdea, org.springframework.security.web.access.ExceptionTranslationFilter@5750f44d, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@11ca9918]
-2020-09-15 22:50:01.798  INFO 46132 --- [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 15 endpoint(s) beneath base path '/actuator'
-2020-09-15 22:50:01.860  INFO 46132 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
-2020-09-15 22:50:01.861  INFO 46132 --- [restartedMain] DeferredRepositoryInitializationListener : Triggering deferred initialization of Spring Data repositories…
-2020-09-15 22:50:02.023  INFO 46132 --- [restartedMain] DeferredRepositoryInitializationListener : Spring Data repositories initialized!
-2020-09-15 22:50:02.037  INFO 46132 --- [restartedMain] c.s.SaytfastWeb.SaytfastWebApplication   : Started SaytfastWebApplication in 3.215 seconds (JVM running for 3.937)
-2020-09-15 22:50:02.439  INFO 46132 --- [RMI TCP Connection(2)-127.0.0.1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2020-09-15 22:50:02.439  INFO 46132 --- [RMI TCP Connection(2)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2020-09-15 22:50:02.446  INFO 46132 --- [RMI TCP Connection(2)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 7 ms
-2020-09-15 22:51:53.703  INFO 46132 --- [SpringContextShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2020-09-15 22:51:53.704  INFO 46132 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
-2020-09-15 22:51:53.929  WARN 46132 --- [SpringContextShutdownHook] o.s.b.f.support.DisposableBeanAdapter    : Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-200]
-2020-09-15 22:51:53.930  INFO 46132 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2020-09-15 22:51:53.982  INFO 46132 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2020-09-15 22:51:56.579  INFO 46194 --- [restartedMain] c.s.SaytfastWeb.SaytfastWebApplication   : Starting SaytfastWebApplication on rhetts-Mac-Pro-3.local with PID 46194 (/Users/rhettherring/IdeaProjects/SaytfastWeb /target/classes started by rhettherring in /Users/rhettherring/IdeaProjects/SaytfastWeb )
-2020-09-15 22:51:56.581  INFO 46194 --- [restartedMain] c.s.SaytfastWeb.SaytfastWebApplication   : The following profiles are active: dev
-2020-09-15 22:51:56.630  INFO 46194 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2020-09-15 22:51:56.630  INFO 46194 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2020-09-15 22:51:57.478  INFO 46194 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFERRED mode.
-2020-09-15 22:51:57.539  INFO 46194 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 53ms. Found 1 JPA repository interfaces.
-2020-09-15 22:51:58.112  INFO 46194 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2020-09-15 22:51:58.120  INFO 46194 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2020-09-15 22:51:58.120  INFO 46194 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.37]
-2020-09-15 22:51:58.208  INFO 46194 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2020-09-15 22:51:58.209  INFO 46194 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1578 ms
-2020-09-15 22:51:58.354  INFO 46194 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2020-09-15 22:51:58.456  INFO 46194 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2020-09-15 22:51:58.462  INFO 46194 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:SayitfastWeb'
-2020-09-15 22:51:58.616  INFO 46194 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2020-09-15 22:51:58.709  INFO 46194 --- [task-1] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2020-09-15 22:51:58.749  INFO 46194 --- [task-1] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.21.Final
-2020-09-15 22:51:58.750  WARN 46194 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2020-09-15 22:51:58.856  INFO 46194 --- [task-1] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
-2020-09-15 22:51:58.943  INFO 46194 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
-2020-09-15 22:51:58.947  INFO 46194 --- [task-1] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
-2020-09-15 22:51:59.438  INFO 46194 --- [task-1] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2020-09-15 22:51:59.444  INFO 46194 --- [task-1] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2020-09-15 22:51:59.461  INFO 46194 --- [task-2] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2020-09-15 22:51:59.565  INFO 46194 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@3514e9b1, org.springframework.security.web.context.SecurityContextPersistenceFilter@646ba8a5, org.springframework.security.web.header.HeaderWriterFilter@78b5afdd, org.springframework.security.web.authentication.logout.LogoutFilter@73f22241, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@220164d8, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@278c4482, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@68c5b382, org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter@12ad3347, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@6deb7475, org.springframework.security.web.session.SessionManagementFilter@3e4c0df3, org.springframework.security.web.access.ExceptionTranslationFilter@691bf27b, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@621212f5]
-2020-09-15 22:51:59.603  INFO 46194 --- [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 15 endpoint(s) beneath base path '/actuator'
-2020-09-15 22:51:59.668  INFO 46194 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
-2020-09-15 22:51:59.669  INFO 46194 --- [restartedMain] DeferredRepositoryInitializationListener : Triggering deferred initialization of Spring Data repositories…
-2020-09-15 22:51:59.833  INFO 46194 --- [restartedMain] DeferredRepositoryInitializationListener : Spring Data repositories initialized!
-2020-09-15 22:51:59.846  INFO 46194 --- [restartedMain] c.s.SaytfastWeb.SaytfastWebApplication   : Started SaytfastWebApplication in 3.59 seconds (JVM running for 4.181)
-2020-09-15 22:52:00.004  INFO 46194 --- [RMI TCP Connection(2)-127.0.0.1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2020-09-15 22:52:00.004  INFO 46194 --- [RMI TCP Connection(2)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2020-09-15 22:52:00.011  INFO 46194 --- [RMI TCP Connection(2)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 7 ms
-2020-09-15 22:53:46.167  INFO 46194 --- [SpringContextShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2020-09-15 22:53:46.169  INFO 46194 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
-2020-09-15 22:53:46.279 ERROR 46194 --- [HikariPool-1 connection adder] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Error thrown while acquiring connection from data source
-
-org.h2.jdbc.JdbcSQLNonTransientConnectionException: The database is open in exclusive mode; can not open additional connections [90135-200]
-	at org.h2.message.DbException.getJdbcSQLException(DbException.java:622) ~[h2-1.4.200.jar:1.4.200]
-	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429) ~[h2-1.4.200.jar:1.4.200]
-	at org.h2.message.DbException.get(DbException.java:205) ~[h2-1.4.200.jar:1.4.200]
-	at org.h2.message.DbException.get(DbException.java:181) ~[h2-1.4.200.jar:1.4.200]
-	at org.h2.message.DbException.get(DbException.java:170) ~[h2-1.4.200.jar:1.4.200]
-	at org.h2.engine.Session.checkSuspended(Session.java:1369) ~[h2-1.4.200.jar:1.4.200]
-	at org.h2.engine.Session.isOpen(Session.java:1303) ~[h2-1.4.200.jar:1.4.200]
-	at org.h2.engine.Session.waitIfExclusiveModeEnabled(Session.java:1639) ~[h2-1.4.200.jar:1.4.200]
-	at org.h2.command.Command.executeQuery(Command.java:186) ~[h2-1.4.200.jar:1.4.200]
-	at org.h2.jdbc.JdbcConnection.isReadOnly(JdbcConnection.java:631) ~[h2-1.4.200.jar:1.4.200]
-	at com.zaxxer.hikari.pool.PoolBase.setupConnection(PoolBase.java:402) ~[HikariCP-3.4.5.jar:na]
-	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:363) ~[HikariCP-3.4.5.jar:na]
-	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:206) ~[HikariCP-3.4.5.jar:na]
-	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:477) [HikariCP-3.4.5.jar:na]
-	at com.zaxxer.hikari.pool.HikariPool.access$100(HikariPool.java:71) [HikariCP-3.4.5.jar:na]
-	at com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator.call(HikariPool.java:725) [HikariCP-3.4.5.jar:na]
-	at com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator.call(HikariPool.java:711) [HikariCP-3.4.5.jar:na]
-	at java.util.concurrent.FutureTask.run(FutureTask.java:266) [na:1.8.0_131]
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142) [na:1.8.0_131]
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617) [na:1.8.0_131]
-	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_131]
-
-2020-09-15 22:53:46.378  WARN 46194 --- [SpringContextShutdownHook] o.s.b.f.support.DisposableBeanAdapter    : Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-200]
-2020-09-15 22:53:46.379  INFO 46194 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2020-09-15 22:53:46.533  INFO 46194 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2020-09-15 22:53:48.980  INFO 46235 --- [restartedMain] c.s.SaytfastWeb.SaytfastWebApplication   : Starting SaytfastWebApplication on rhetts-Mac-Pro-3.local with PID 46235 (/Users/rhettherring/IdeaProjects/SaytfastWeb /target/classes started by rhettherring in /Users/rhettherring/IdeaProjects/SaytfastWeb )
-2020-09-15 22:53:48.983  INFO 46235 --- [restartedMain] c.s.SaytfastWeb.SaytfastWebApplication   : The following profiles are active: dev
-2020-09-15 22:53:49.031  INFO 46235 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2020-09-15 22:53:49.031  INFO 46235 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2020-09-15 22:53:49.822  INFO 46235 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFERRED mode.
-2020-09-15 22:53:49.868  INFO 46235 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 40ms. Found 1 JPA repository interfaces.
-2020-09-15 22:53:50.328  INFO 46235 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2020-09-15 22:53:50.334  INFO 46235 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2020-09-15 22:53:50.334  INFO 46235 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.37]
-2020-09-15 22:53:50.403  INFO 46235 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2020-09-15 22:53:50.403  INFO 46235 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1372 ms
-2020-09-15 22:53:50.500  INFO 46235 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2020-09-15 22:53:50.578  INFO 46235 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2020-09-15 22:53:50.583  INFO 46235 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:SayitfastWeb'
-2020-09-15 22:53:50.730  INFO 46235 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2020-09-15 22:53:50.810  INFO 46235 --- [task-1] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2020-09-15 22:53:50.847  WARN 46235 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2020-09-15 22:53:50.848  INFO 46235 --- [task-1] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.21.Final
-2020-09-15 22:53:50.951  INFO 46235 --- [task-1] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
-2020-09-15 22:53:51.035  INFO 46235 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
-2020-09-15 22:53:51.042  INFO 46235 --- [task-1] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
-2020-09-15 22:53:51.528  INFO 46235 --- [task-1] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2020-09-15 22:53:51.534  INFO 46235 --- [task-1] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2020-09-15 22:53:51.551  INFO 46235 --- [task-2] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2020-09-15 22:53:51.651  INFO 46235 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@71644e35, org.springframework.security.web.context.SecurityContextPersistenceFilter@1b6e68ab, org.springframework.security.web.header.HeaderWriterFilter@3562666f, org.springframework.security.web.authentication.logout.LogoutFilter@36102e39, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@6deb7475, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@27f49870, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@8eba239, org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter@6a1e6f4e, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@32f2ba6a, org.springframework.security.web.session.SessionManagementFilter@313fd822, org.springframework.security.web.access.ExceptionTranslationFilter@6e63603, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@12ad3347]
-2020-09-15 22:53:51.688  INFO 46235 --- [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 15 endpoint(s) beneath base path '/actuator'
-2020-09-15 22:53:51.751  INFO 46235 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
-2020-09-15 22:53:51.752  INFO 46235 --- [restartedMain] DeferredRepositoryInitializationListener : Triggering deferred initialization of Spring Data repositories…
-2020-09-15 22:53:51.912  INFO 46235 --- [restartedMain] DeferredRepositoryInitializationListener : Spring Data repositories initialized!
-2020-09-15 22:53:51.925  INFO 46235 --- [restartedMain] c.s.SaytfastWeb.SaytfastWebApplication   : Started SaytfastWebApplication in 3.25 seconds (JVM running for 3.806)
-2020-09-15 22:53:52.422  INFO 46235 --- [RMI TCP Connection(1)-127.0.0.1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2020-09-15 22:53:52.422  INFO 46235 --- [RMI TCP Connection(1)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2020-09-15 22:53:52.429  INFO 46235 --- [RMI TCP Connection(1)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 7 ms
+2020-09-16 00:57:25.039  INFO 47762 --- [restartedMain] c.s.SaytfastWeb.SaytfastWebApplication   : Starting SaytfastWebApplication on rhetts-Mac-Pro-3.local with PID 47762 (/Users/rhettherring/IdeaProjects/SaytfastWeb /target/classes started by rhettherring in /Users/rhettherring/IdeaProjects/SaytfastWeb )
+2020-09-16 00:57:25.045  INFO 47762 --- [restartedMain] c.s.SaytfastWeb.SaytfastWebApplication   : The following profiles are active: dev
+2020-09-16 00:57:25.099  INFO 47762 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-09-16 00:57:25.099  INFO 47762 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-09-16 00:57:25.917  INFO 47762 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2020-09-16 00:57:25.967  INFO 47762 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 43ms. Found 1 JPA repository interfaces.
+2020-09-16 00:57:26.464  INFO 47762 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2020-09-16 00:57:26.471  INFO 47762 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-09-16 00:57:26.471  INFO 47762 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.37]
+2020-09-16 00:57:26.548  INFO 47762 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-09-16 00:57:26.548  INFO 47762 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1449 ms
+2020-09-16 00:57:26.654  INFO 47762 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-09-16 00:57:26.740  INFO 47762 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-09-16 00:57:26.745  INFO 47762 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:SayitfastWeb'
+2020-09-16 00:57:26.905  INFO 47762 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-09-16 00:57:26.982  INFO 47762 --- [task-1] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-09-16 00:57:27.023  INFO 47762 --- [task-1] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.21.Final
+2020-09-16 00:57:27.025  WARN 47762 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-09-16 00:57:27.135  INFO 47762 --- [task-1] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-09-16 00:57:27.222  INFO 47762 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2020-09-16 00:57:27.230  INFO 47762 --- [task-1] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2020-09-16 00:57:27.741  INFO 47762 --- [task-1] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-09-16 00:57:27.748  INFO 47762 --- [task-1] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-09-16 00:57:27.765  INFO 47762 --- [task-2] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2020-09-16 00:57:27.876  INFO 47762 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@585ea53b, org.springframework.security.web.context.SecurityContextPersistenceFilter@1dbfcadc, org.springframework.security.web.header.HeaderWriterFilter@50a75996, org.springframework.security.web.authentication.logout.LogoutFilter@598377d3, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@438e146f, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@6736126b, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@63daf780, org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter@1923a2c7, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@1eb7ad60, org.springframework.security.web.session.SessionManagementFilter@68a270bd, org.springframework.security.web.access.ExceptionTranslationFilter@531f33f4, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@1e5ae443]
+2020-09-16 00:57:27.917  INFO 47762 --- [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 15 endpoint(s) beneath base path '/actuator'
+2020-09-16 00:57:27.987  INFO 47762 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2020-09-16 00:57:27.989  INFO 47762 --- [restartedMain] DeferredRepositoryInitializationListener : Triggering deferred initialization of Spring Data repositories…
+2020-09-16 00:57:28.173  INFO 47762 --- [restartedMain] DeferredRepositoryInitializationListener : Spring Data repositories initialized!
+2020-09-16 00:57:28.187  INFO 47762 --- [restartedMain] c.s.SaytfastWeb.SaytfastWebApplication   : Started SaytfastWebApplication in 3.487 seconds (JVM running for 4.077)
+2020-09-16 00:57:28.289  INFO 47762 --- [RMI TCP Connection(2)-127.0.0.1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-09-16 00:57:28.289  INFO 47762 --- [RMI TCP Connection(2)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-09-16 00:57:28.298  INFO 47762 --- [RMI TCP Connection(2)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 9 ms
+2020-09-16 02:04:58.358  INFO 47762 --- [SpringContextShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-09-16 02:04:58.359  INFO 47762 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-09-16 02:04:58.568  WARN 47762 --- [SpringContextShutdownHook] o.s.b.f.support.DisposableBeanAdapter    : Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-200]
+2020-09-16 02:04:58.568  INFO 47762 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2020-09-16 02:04:58.621  INFO 47762 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.

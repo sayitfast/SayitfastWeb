@@ -10,7 +10,7 @@ import javax.persistence.Id;
  * Created by IntelliJ IDEA. User: Rhett Herring 9/14/20 11:06 PM
  */
 @Entity
-public class Updates {
+public class UpdatesPage {
 
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
